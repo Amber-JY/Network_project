@@ -1,0 +1,3 @@
+﻿  GBNRdtSender.cpp
+G:\Computer_network\EX2\GBN\GBN\GBNRdtSender.cpp(33,22): warning C4553: “==”: 未使用表达式结果；是否打算使用“=”?
+  GBN.vcxproj -> G:\Computer_network\EX2\GBN\Debug\GBN.exe
