@@ -1,0 +1,108 @@
+!
+version 12.2
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 211.69.4.254 255.255.255.128
+ duplex auto
+ speed auto
+ shutdown
+!
+interface FastEthernet1/0
+ ip address 211.69.4.1 255.255.255.224
+ ip access-group 1 out
+ duplex auto
+ speed auto
+ shutdown
+!
+interface FastEthernet2/0
+ ip address 211.69.4.33 255.255.255.224
+ ip access-group 1 out
+ duplex auto
+ speed auto
+ shutdown
+!
+interface FastEthernet3/0
+ ip address 211.69.4.65 255.255.255.224
+ ip access-group 1 out
+ duplex auto
+ speed auto
+ shutdown
+!
+interface FastEthernet4/0
+ ip address 211.69.4.97 255.255.255.224
+ ip access-group 1 out
+ duplex auto
+ speed auto
+ shutdown
+!
+interface FastEthernet5/0
+ ip address 211.69.5.1 255.255.255.0
+ ip access-group 2 out
+ duplex auto
+ speed auto
+ shutdown
+!
+interface FastEthernet6/0
+ ip address 211.69.6.1 255.255.255.0
+ ip access-group 2 out
+ duplex auto
+ speed auto
+ shutdown
+!
+interface FastEthernet7/0
+ ip address 211.69.7.1 255.255.255.0
+ ip access-group 2 out
+ duplex auto
+ speed auto
+ shutdown
+!
+ip classless
+!
+!
+access-list 1 deny 211.69.5.0 0.0.0.255
+access-list 1 deny 211.69.6.0 0.0.0.255
+access-list 1 deny 211.69.7.0 0.0.0.255
+access-list 1 permit any
+access-list 2 deny 211.69.4.1 0.0.0.16
+access-list 2 deny 211.69.4.33 0.0.0.16
+access-list 2 deny 211.69.4.65 0.0.0.16
+access-list 2 deny 211.69.4.97 0.0.0.16
+access-list 2 permit any
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
